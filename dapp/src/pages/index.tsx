@@ -3,7 +3,6 @@ import Web3 from "web3";
 import { Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-// import { CONTACT_ABI } from "../configs/config";
 
 const Home: NextPage = () => {
   const [account, setAccount] = useState(""); // state variable to set account.
@@ -32,7 +31,7 @@ const Home: NextPage = () => {
       <main>
         {account ? (
           <>
-            <Typography variant="h1">Your account is: {account}</Typography>
+            <Typography variant="h1" fontSize={"sm"}>Your account is: {account}</Typography>
           </>
         ) : (
           <button onClick={handleSignIn}>Sign in</button>
