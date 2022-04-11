@@ -7,8 +7,6 @@ import { Navbar } from "../../components";
 
 const Home: NextPage = () => {
   const [account, setAccount] = useState(""); // state variable to set account.
-  // const [contactList, setContactList] = useState<Contract>();
-  // const [contacts, setContacts] = useState<any>([]);
 
   // TODO: move Web3 logic to global-scope context
   const handleSignIn = async () => {
