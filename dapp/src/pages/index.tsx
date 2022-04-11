@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import Web3 from "web3";
 import { Box, Button, Grid } from "@mui/material";
 import {
   HomePageContainer,
@@ -14,14 +13,6 @@ import { PageLayout } from "../components";
 
 const Home: NextPage = () => {
   const [account, setAccount] = useState(""); // state variable to set account.
-
-  // TODO: move Web3 logic to global-scope context
-  const handleSignIn = async () => {
-    const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
-    const accounts = await web3.eth.requestAccounts();
-    console.log({ accounts });
-    setAccount(accounts[0]);
-  };
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import styled, { keyframes } from "@mui/styled-engine";
+import styled from "@mui/styled-engine";
 
 export const HomePageContainer = styled(Grid)`
   @media screen and (min-width: 768px) {
