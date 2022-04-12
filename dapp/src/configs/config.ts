@@ -4,8 +4,8 @@ export const CONTACT_ADDRESS = "0xeE7ed279EFBbF32CC8f78e3c734713afC1D215f2";
 export const CONTACT_ABI: Array<AbiItem> = [
   {
     constant: true,
-    name: "count",
     inputs: [],
+    name: "count",
     outputs: [
       {
         name: "",

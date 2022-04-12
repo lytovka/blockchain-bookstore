@@ -5,7 +5,7 @@ import { PageLayout } from "~/components";
 import { useWeb3Context } from "~/contexts/Web3Context";
 
 const Home: NextPage = () => {
-  const { handleSignIn, account } = useWeb3Context();
+  const { account, handleSignIn } = useWeb3Context();
   return (
     <div>
       <Head>

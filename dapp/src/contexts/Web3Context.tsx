@@ -11,14 +11,14 @@ import Web3 from "web3";
 
 interface IWeb3Context {
   account: string | null;
-  setAccount: Dispatch<SetStateAction<string | null>>;
   handleSignIn: () => Promise<void>;
+  setAccount: Dispatch<SetStateAction<string | null>>;
 }
 
 const web3ContextDefaults: IWeb3Context = {
   account: null,
-  setAccount: (_) => {},
   handleSignIn: async () => {},
+  setAccount: (_) => {},
 };
 
 const Web3Context = createContext<IWeb3Context | undefined>(undefined);
@@ -37,7 +37,7 @@ export const Web3Provider: FunctionComponent<PropsWithChildren<unknown>> = ({
   };
 
   return (
-    <Web3Context.Provider value={{ account, setAccount, handleSignIn }}>
+    <Web3Context.Provider value={{ account, handleSignIn, setAccount }}>
       {children}
     </Web3Context.Provider>
   );

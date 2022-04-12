@@ -1,6 +1,5 @@
 module.exports =
 {
-    presets: ["next/babel"],
     plugins: [
         [
             'module-resolver',
@@ -8,10 +7,11 @@ module.exports =
                 alias: {
                     '~/components': './src/components',
                     '~/contexts': './src/contexts',
-                    '~/theme': './src/theme',
                     '~/styles': './src/styles',
+                    '~/theme': './src/theme',
                 },
             },
         ],
-    ]
+    ],
+    presets: ["next/babel"]
 }

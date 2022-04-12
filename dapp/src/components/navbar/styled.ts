@@ -5,15 +5,15 @@ export const CustomAppBar = styled(AppBar)((props) => ({
 }));
 
 export const CustomToolbar = styled(Toolbar)((props) => ({
-  maxWidth: props.theme.breakpoints.values["lg"],
-  width: "100%",
-  padding: "0",
   justifyContent: "space-between",
   margin: "0 auto",
+  maxWidth: props.theme.breakpoints.values["lg"],
+  padding: "0",
+  width: "100%",
 }));
 
 export const MenuItems = styled(Box)({
-  overflowX: "scroll",
   display: "flex",
   gap: 16,
+  overflowX: "scroll",
 });

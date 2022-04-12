@@ -16,7 +16,7 @@ export const PageLayout = ({
     <Box height="100vh">
       <Navbar />
       <Container
-        sx={{ paddingTop: "4rem", paddingBottom: "4rem" }}
+        sx={{ paddingBottom: "4rem", paddingTop: "4rem" }}
         maxWidth={maxWidth}
       >
         {children}
