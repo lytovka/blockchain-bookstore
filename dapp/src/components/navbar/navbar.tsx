@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Box, Button } from "@mui/material";
-import { CustomAppBar, CustomToolbar, MenuItems } from "./styled";
+import Link from 'next/link';
+import { Box, Button } from '@mui/material';
+import { CustomAppBar, CustomToolbar, MenuItems } from './styled';
 
 export const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ export const Navbar = () => {
       <CustomAppBar position="static">
         <CustomToolbar>
           <Box display="flex">
-            <Link href={"/"}>Bookstore</Link>
+            <Link href={'/'}>Bookstore</Link>
           </Box>
           <MenuItems>
             <Link href="/signin" passHref>

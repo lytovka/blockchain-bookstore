@@ -1,5 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
-import styled from "@mui/styled-engine";
+import { Box, Grid, Typography } from '@mui/material';
+import styled from '@mui/styled-engine';
 
 export const HomePageContainer = styled(Grid)`
   @media screen and (min-width: 768px) {
@@ -16,7 +16,7 @@ export const HomePageImageContainer = styled(Grid)`
   height: 100%;
 `;
 
-export const HomePageImage = styled("img")`
+export const HomePageImage = styled('img')`
   max-width: 30rem;
   width: 100%;
   height: auto
@@ -32,7 +32,7 @@ export const HomePageBottomContainer = styled(Box)`
   }
 `;
 
-export const HomePageHeadingSlider = styled("div")`
+export const HomePageHeadingSlider = styled('div')`
   height: 50px;
   padding-left: 15px;
   overflow: hidden;

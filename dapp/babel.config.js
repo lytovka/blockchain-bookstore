@@ -1,17 +1,16 @@
-module.exports =
-{
-    presets: ["next/babel"],
-    plugins: [
-        [
-            'module-resolver',
-            {
-                alias: {
-                    '~/components': './src/components',
-                    '~/contexts': './src/contexts',
-                    '~/theme': './src/theme',
-                    '~/styles': './src/styles',
-                },
-            },
-        ],
-    ]
-}
+module.exports = {
+  plugins: [
+    [
+      'module-resolver',
+      {
+        alias: {
+          '~/components': './src/components',
+          '~/contexts': './src/contexts',
+          '~/styles': './src/styles',
+          '~/theme': './src/theme',
+        },
+      },
+    ],
+  ],
+  presets: ['next/babel'],
+};
