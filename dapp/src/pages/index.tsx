@@ -9,11 +9,9 @@ import {
   HomePageImage,
   HomePageImageContainer,
 } from "./styled";
-import { PageLayout } from "../components";
+import { PageLayout } from "~/components";
 
 const Home: NextPage = () => {
-  const [account, setAccount] = useState(""); // state variable to set account.
-
   return (
     <div>
       <Head>

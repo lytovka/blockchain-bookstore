@@ -9,6 +9,7 @@ module.exports =
                     '~/components': './src/components',
                     '~/contexts': './src/contexts',
                     '~/theme': './src/theme',
+                    '~/styles': './src/styles',
                 },
             },
         ],

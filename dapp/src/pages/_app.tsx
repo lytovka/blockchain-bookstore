@@ -1,8 +1,8 @@
-import "../styles/globals.css";
+import "~/styles/globals.css";
+import { Web3Provider } from "~/contexts/Web3Context";
+import { customTheme } from "~/theme/mui-theme";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material";
-import { customTheme } from "../theme/mui-theme";
-import { Web3Provider } from "../contexts/Web3Context";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
