@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
-import type { NextPage } from "next";
-import Head from "next/head";
-import { PageLayout } from "~/components";
-import { useWeb3Context } from "~/contexts/Web3Context";
+import { Typography } from '@mui/material';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { PageLayout } from '~/components';
+import { useWeb3Context } from '~/contexts/Web3Context';
 
 const Home: NextPage = () => {
   const { account, handleSignIn } = useWeb3Context();

@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import { Box, Button, Grid } from "@mui/material";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { Box, Button, Grid } from '@mui/material';
 import {
   HomePageContainer,
   HomePageHeading,
   HomePageImage,
   HomePageImageContainer,
-} from "./styled";
-import { PageLayout } from "~/components";
+} from './styled';
+import { PageLayout } from '~/components';
 
 const Home: NextPage = () => {
   return (
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             <HomePageHeading
               variant="h1"
               fontSize="2.8rem"
-              textAlign={"center"}
+              textAlign={'center'}
             >
               Fast and secure way to rent out your favorite books.
               <br /> No intermediaries. No problems
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
           </Grid>
           <HomePageImageContainer item xs={12} lg={6}>
             <HomePageImage
-              src={"/home-page/pile-of-books.png"}
+              src={'/home-page/pile-of-books.png'}
               alt="Book Worm Images"
             />
           </HomePageImageContainer>

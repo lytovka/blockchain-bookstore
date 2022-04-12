@@ -6,8 +6,8 @@ import {
   SetStateAction,
   useContext,
   useState,
-} from "react";
-import Web3 from "web3";
+} from 'react';
+import Web3 from 'web3';
 
 interface IWeb3Context {
   account: string | null;
@@ -31,7 +31,7 @@ export const Web3Provider: FunctionComponent<PropsWithChildren<unknown>> = ({
   );
 
   const handleSignIn = async () => {
-    const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
+    const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
     const accounts = await web3.eth.requestAccounts();
     setAccount(accounts[0]);
   };

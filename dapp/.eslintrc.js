@@ -1,15 +1,12 @@
 module.exports = {
-  extends: [
-    "eslint:recommended",
-    "next"
-  ],
+  extends: ['eslint:recommended', 'next'],
   overrides: [
     {
       extends: [
-        "plugin:@typescript-eslint/recommended",
+        'plugin:@typescript-eslint/recommended',
         'plugin:typescript-sort-keys/recommended',
       ],
-      files: ["**/*.ts", "**/*.tsx"],
+      files: ['**/*.ts', '**/*.tsx'],
       parserOptions: {
         project: ['./tsconfig.json'],
         tsconfigRootDir: __dirname,
@@ -30,9 +27,9 @@ module.exports = {
             varsIgnorePattern: '^_',
           },
         ],
-        "typescript-sort-keys/interface": "warn"
-      }
-    }
+        'typescript-sort-keys/interface': 'warn',
+      },
+    },
   ],
   plugins: ['sort-destructure-keys', 'sort-keys-fix'],
   root: true,
@@ -41,5 +38,5 @@ module.exports = {
     'no-unneeded-ternary': 'error',
     'sort-destructure-keys/sort-destructure-keys': 'warn',
     'sort-keys-fix/sort-keys-fix': 'warn',
-  }
-}
+  },
+};

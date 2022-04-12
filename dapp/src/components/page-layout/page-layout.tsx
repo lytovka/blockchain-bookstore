@@ -1,22 +1,22 @@
-import { Box, Container } from "@mui/material";
-import { ReactChild, ReactFragment, ReactPortal } from "react";
-import { Navbar } from "..";
+import { Box, Container } from '@mui/material';
+import { ReactChild, ReactFragment, ReactPortal } from 'react';
+import { Navbar } from '~/components';
 
 interface IGenericPageLayoutProps {
   children: boolean | ReactChild | ReactFragment | ReactPortal | null;
   fixedBar?: boolean;
-  maxWidth?: "md" | "lg";
+  maxWidth?: 'md' | 'lg';
 }
 
 export const PageLayout = ({
   children,
-  maxWidth = "lg",
+  maxWidth = 'lg',
 }: IGenericPageLayoutProps) => {
   return (
     <Box height="100vh">
       <Navbar />
       <Container
-        sx={{ paddingBottom: "4rem", paddingTop: "4rem" }}
+        sx={{ paddingBottom: '4rem', paddingTop: '4rem' }}
         maxWidth={maxWidth}
       >
         {children}
