@@ -19,7 +19,7 @@ export const PageLayout = ({
         sx={{ paddingBottom: '4rem', paddingTop: '4rem' }}
         maxWidth={maxWidth}
       >
-        {children}
+        <main>{children}</main>
       </Container>
     </Box>
   );

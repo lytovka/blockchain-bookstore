@@ -43,7 +43,7 @@ const Home: NextPage = () => {
               <Link href="/signin" passHref>
                 <Button variant="contained">Sign in</Button>
               </Link>
-              <Link href="/store" passHref>
+              <Link href="/bookstore" passHref>
                 <Button color="secondary" variant="contained">
                   Visit our store
                 </Button>
