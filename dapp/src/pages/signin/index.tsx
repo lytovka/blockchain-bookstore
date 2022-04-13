@@ -11,23 +11,26 @@ import {
 import type { NextPage } from 'next';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Head from 'next/head';
-import { connectToAccount } from '~/api/web3';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useWeb3Context } from '~/contexts/Web3Context';
 
 const SignIn: NextPage = () => {
-  // const { handleSignIn } = useWeb3Context();
+  const router = useRouter();
+  const { signIn } = useWeb3Context();
   const [inputError, setInputError] = useState(false);
 
   const handleSignIn = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const currentName = data.get('name');
-    if (!currentName) {
+    if (!currentName || typeof currentName !== 'string') {
       setInputError(true);
       return;
     }
     try {
-      await connectToAccount();
+      await signIn(currentName);
+      router.push('/');
       setInputError(false);
     } catch (e) {
       console.error(e);

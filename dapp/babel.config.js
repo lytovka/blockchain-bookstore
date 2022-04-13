@@ -7,9 +7,11 @@ module.exports = {
                     '~/api': './src/api',
                     '~/components': './src/components',
                     '~/configs': './src/configs',
+                    '~/constants': './src/constants',
                     '~/contexts': './src/contexts',
                     '~/styles': './src/styles',
-                    '~/theme': './src/theme'
+                    '~/theme': './src/theme',
+                    '~/utils': './src/utils'
                 },
             },
         ],
