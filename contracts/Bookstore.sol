@@ -62,7 +62,7 @@ contract Bookstore {
         require(targetListing.status == ListingStatus.Active, "Cannot Remove Listing that is not Active");
         
         targetListing.status = ListingStatus.Removed;
-        IERC721(targetListing.item).safeTransferFrom(address(this), msg.sender, targetListing.itemId);
+        IERC721(targetListing.item).transferFrom(address(this), msg.sender, targetListing.itemId);
 
     }
 
