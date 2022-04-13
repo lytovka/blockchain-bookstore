@@ -9,6 +9,7 @@ module.exports = {
                     '~/configs': './src/configs',
                     '~/constants': './src/constants',
                     '~/contexts': './src/contexts',
+                    "~/data": "./src/data",
                     '~/styles': './src/styles',
                     '~/theme': './src/theme',
                     '~/utils': './src/utils'
