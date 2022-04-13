@@ -14,12 +14,14 @@ import { tryLocalStorageSetItem } from '~/utils/localStorage';
 
 interface IWeb3Context {
   account: IAccount | null;
+  isSignedIn: boolean;
   setAccount: Dispatch<SetStateAction<IAccount | null>>;
   signIn: (_: string) => Promise<void>;
 }
 
 const web3ContextDefaults: IWeb3Context = {
   account: null,
+  isSignedIn: false,
   setAccount: (_) => {},
   signIn: async () => {},
 };
@@ -32,6 +34,7 @@ export const Web3Provider: FunctionComponent<PropsWithChildren<unknown>> = ({
   const [account, setAccount] = useState<IAccount | null>(
     web3ContextDefaults.account
   );
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   const signIn = async (newAccountName: string) => {
     try {
@@ -41,17 +44,23 @@ export const Web3Provider: FunctionComponent<PropsWithChildren<unknown>> = ({
         accountName: newAccountName,
       };
       setAccount(newAccount);
+      setIsSignedIn(true);
       tryLocalStorageSetItem(
         LOCAL_STORAGE_ACCOUNT_KEY,
         JSON.stringify(newAccount)
       );
     } catch {
-      setAccount(null);
+      resetAccountInfo();
     }
   };
 
+  const resetAccountInfo = () => {
+    setAccount(null);
+    setIsSignedIn(true);
+  };
+
   return (
-    <Web3Context.Provider value={{ account, setAccount, signIn }}>
+    <Web3Context.Provider value={{ account, isSignedIn, setAccount, signIn }}>
       {children}
     </Web3Context.Provider>
   );
