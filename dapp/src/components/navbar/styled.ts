@@ -15,5 +15,4 @@ export const CustomToolbar = styled(Toolbar)((props) => ({
 export const MenuItems = styled(Box)({
   display: 'flex',
   gap: 16,
-  overflowX: 'scroll',
 });
