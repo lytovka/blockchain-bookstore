@@ -1,10 +1,10 @@
 ## Getting Started
 
-This dapp is build on top of [`Truffle`](https://trufflesuite.com/) and [`Next.js`](https://nextjs.org/)
+This dapp is built on top of [`Truffle`](https://trufflesuite.com/) and [`Next.js`](https://nextjs.org/)
 
 1. Install dependencies
 
-Ensure that you're using the version of Node that is specified in `~/.nvmrc` file before installing dependencies or running the project locally. This will lock your local Node version for the project to prevent unexpectedly large changes in `package-lock.json` file. Using `nvm` command:
+Ensure that you're using the version of Node that is specified in `~/.nvmrc` file before installing dependencies or running this project locally. This will lock your local Node version for the project to prevent unexpectedly large changes in `package-lock.json` file. Using `nvm` command:
 
 ```bash
 nvm use # pick node version from .nvmrc file
