@@ -11,15 +11,15 @@ nvm use # pick node version from .nvmrc file
 npm install
 ```
 
-2. Set up local instance of `Ganache` blockchain.
+2. Set up local instance of [`Ganache`](https://trufflesuite.com/ganache/) blockchain.
 
-You will need to install [`Ganache`](https://trufflesuite.com/ganache/) to fire up local Ethereum blockchain. This blockchain will execute Solidity contracts from `~/contracts` folder.
+You will need to install `Ganache` to fire up local Ethereum blockchain. This blockchain will execute Solidity contracts from `~/contracts` folder.
 
-Inside Ganache, create a new Ethereum workspace. Next, click on the Gear icon and navigate to `Workspace`. Add new truffle project by supplying the path to your `truffle-config.js` file. 
+Inside `Ganache`, create a new Ethereum workspace. Next, click on the Gear icon (:gear:) and navigate to `Workspace`. Add new truffle project by supplying the path to your `truffle-config.js` file. 
 
 3. Deploy contracts to `Ganache`
 
-From the project's terminal window, compile smart contracts and migrate them to your local Ganache instance. 
+From the project's terminal window, compile smart contracts and migrate them to your local `Ganache` instance. 
 
 If you want to have `truffle` installed globally:
 ```bash
