@@ -5,9 +5,11 @@ import { Box, Button, Grid } from '@mui/material';
 import {
   HomePageContainer,
   HomePageHeading,
+  HomePageHeadingSlider,
+  HomePageHeadingSliderItem,
   HomePageImage,
   HomePageImageContainer,
-} from './styled';
+} from '~/styles/homepage';
 import { PageLayout } from '~/components';
 
 const Home: NextPage = () => {
@@ -37,7 +39,15 @@ const Home: NextPage = () => {
               textAlign={'center'}
             >
               Fast and secure way to rent out your favorite books.
-              <br /> No intermediaries. No problems
+              <br />
+              <HomePageHeadingSlider>
+                <HomePageHeadingSliderItem className={'item-1'}>
+                  No intermediaries.
+                </HomePageHeadingSliderItem>
+                <HomePageHeadingSliderItem className={'item-2'}>
+                  No problems.
+                </HomePageHeadingSliderItem>
+              </HomePageHeadingSlider>
             </HomePageHeading>
             <Box display="flex" gap={3} justifyContent="center">
               <Link href="/signin" passHref>
