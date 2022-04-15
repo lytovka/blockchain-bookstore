@@ -10,11 +10,13 @@ import {
 } from '@mui/material';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import { getListedItems } from '~/api/web3';
+import { getListedItems, handleItemPurchase } from '~/api/web3';
 import { PageLayout } from '~/components';
+import { useWeb3Context } from '~/contexts/Web3Context';
 import books from '~/data/books.json';
 
 const BookstorePage = () => {
+  const { account } = useWeb3Context();
   const [availableBooks, setAvailableBooks] = useState<typeof books>([]);
 
   useEffect(() => {
@@ -25,6 +27,16 @@ const BookstorePage = () => {
     };
     fetch();
   }, []);
+
+  const handleBuyBook = async () => {
+    try {
+      if (account && account.accountName) {
+        await handleItemPurchase(3, account?.accountName);
+      }
+    } catch (error) {
+      console.error('App: could not purchase the book', error);
+    }
+  };
 
   return (
     <div>
@@ -82,8 +94,9 @@ const BookstorePage = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
+                    <Button size="medium" onClick={handleBuyBook}>
+                      Purchase book
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>

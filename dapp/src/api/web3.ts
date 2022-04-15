@@ -52,7 +52,7 @@ export const handleItemPurchase = async (listingId : number, accountAddress : st
 
   bookstoreContract.methods.buyItem(listingId).send({from:accountAddress, value: itemListing['price'] + 1})
   .then(() => {console.log("purchase success")})
-  .catch((error) => {
+  .catch((error: Error) => {
     console.log("purchase failed");
     console.log(error);
   });
