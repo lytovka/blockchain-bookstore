@@ -28,12 +28,20 @@ npm install -g truffle
 truffle compile # compile *.sol files locally
 
 truffle migrate # deploy contracts to Ganache blockchain
+
+truffle console
+
+exec "./add-books.js" #use this inside the truffle console to populate the blockchain with books
 ```
 Alternatively,
 ```bash
 npx truffle compile
 
 npx truffle migrate
+
+npx truffle console
+
+exec "./add-books.js" #use this inside the truffle console to populate the blockchain with books
 ```
 
 4. Run the development server
