@@ -9,10 +9,23 @@ import {
   Typography,
 } from '@mui/material';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import { getListedItems } from '~/api/web3';
 import { PageLayout } from '~/components';
 import books from '~/data/books.json';
 
 const BookstorePage = () => {
+  const [availableBooks, setAvailableBooks] = useState<typeof books>([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const itemIds = await getListedItems();
+      const BOOKS_TO_VIEW = books.filter((book) => itemIds.includes(book.link));
+      setAvailableBooks(BOOKS_TO_VIEW);
+    };
+    fetch();
+  }, []);
+
   return (
     <div>
       <Head>
@@ -43,7 +56,7 @@ const BookstorePage = () => {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {books.map((card) => (
+            {availableBooks.map((card) => (
               <Grid item key={card.link} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
