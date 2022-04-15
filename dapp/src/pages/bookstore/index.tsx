@@ -18,6 +18,7 @@ import books from '~/data/books.json';
 const BookstorePage = () => {
   const { account } = useWeb3Context();
   const [availableBooks, setAvailableBooks] = useState<typeof books>([]);
+  const [listedItems, setListedItems] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const fetch = async () => {
@@ -26,14 +27,21 @@ const BookstorePage = () => {
         Object.values(itemIds).includes(book.link)
       );
       setAvailableBooks(BOOKS_TO_VIEW);
+      setListedItems(itemIds);
     };
     fetch();
   }, []);
 
-  const handleBuyBook = async () => {
+  
+
+  const handleBuyBook = async (link : string) => {
     try {
       if (account && account.accountAddress) {
-        await handleItemPurchase(3, account?.accountAddress);
+        const itemId = Object.keys(listedItems).find(key => listedItems[key] === link);
+        if (itemId) {
+          const intItemId = parseInt(itemId);
+          await handleItemPurchase(intItemId, account?.accountAddress);
+        }
       }
     } catch (error) {
       console.error('App: could not purchase the book', error);
@@ -96,7 +104,7 @@ const BookstorePage = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="medium" onClick={handleBuyBook}>
+                    <Button size="medium" onClick={() => handleBuyBook(card.link)}>
                       Purchase book
                     </Button>
                   </CardActions>
