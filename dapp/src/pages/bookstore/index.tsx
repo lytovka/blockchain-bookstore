@@ -22,7 +22,9 @@ const BookstorePage = () => {
   useEffect(() => {
     const fetch = async () => {
       const itemIds = await getListedItems();
-      const BOOKS_TO_VIEW = books.filter((book) => Object.values(itemIds).includes(book.link));
+      const BOOKS_TO_VIEW = books.filter((book) =>
+        Object.values(itemIds).includes(book.link)
+      );
       setAvailableBooks(BOOKS_TO_VIEW);
     };
     fetch();
@@ -30,8 +32,8 @@ const BookstorePage = () => {
 
   const handleBuyBook = async () => {
     try {
-      if (account && account.accountName) {
-        await handleItemPurchase(3, account?.accountName);
+      if (account && account.accountAddress) {
+        await handleItemPurchase(3, account?.accountAddress);
       }
     } catch (error) {
       console.error('App: could not purchase the book', error);

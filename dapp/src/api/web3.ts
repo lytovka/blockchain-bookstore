@@ -28,12 +28,12 @@ export const getBookstoreItemContract = async (): Promise<Contract> => {
   return new web3.eth.Contract(BookstoreItemContract.abi, BookstoreItemContract.networks[networkId].address);
 }
 
-export const getListedItems = async (): Promise<{[itemId:string] : string}> => {
+export const getListedItems = async (): Promise<Record<string, string>> => {
   const bookstoreContract = await getBookstoreContract();
   const bookstoreItemContract = await getBookstoreItemContract();
 
   const maxItems = await bookstoreContract.methods.getMaxIndex().call();
-  const URIObject : {[itemId:string] : string} = {};
+  const URIObject : Record<string, string> = {};
   
   for (let i = 1; i <= maxItems; i++) {
     const itemListing = await bookstoreContract.methods.getListing(i).call();
