@@ -20,7 +20,7 @@ const BookstorePage = () => {
   useEffect(() => {
     const fetch = async () => {
       const itemIds = await getListedItems();
-      const BOOKS_TO_VIEW = books.filter((book) => itemIds.includes(book.link));
+      const BOOKS_TO_VIEW = books.filter((book) => Object.values(itemIds).includes(book.link));
       setAvailableBooks(BOOKS_TO_VIEW);
     };
     fetch();
