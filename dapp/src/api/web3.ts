@@ -46,3 +46,14 @@ export const getListedItems = async (): Promise<Array<string>> => {
   return URIArray;
 }
 
+export const handleItemPurchase = async (listingId : number, accountAddress : string) => {
+  const bookstoreContract = await getBookstoreContract();
+  const itemListing = await bookstoreContract.methods.getListing(listingId).call(); 
+
+  bookstoreContract.methods.buyItem(listingId).send({from:accountAddress, value: itemListing['price'] + 1})
+  .then(() => {console.log("purchase success")})
+  .catch((error) => {
+    console.log("purchase failed");
+    console.log(error);
+  });
+}
